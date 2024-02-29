@@ -2,7 +2,7 @@
 
 This is a simple chess game implemented in Java. It allows you to play chess on a graphical user interface.
 
-![image](https://github.com/auriorajaa/2DSimpleChess/assets/108510729/6bf89157-1252-45c9-b249-7de6d007be4c)
+![image](https://github.com/auriorajaa/2DSimpleChess/assets/108510729/4a24d2f2-05c0-498b-9db1-8f2f17b47b9d)
 
 
 ## Features
