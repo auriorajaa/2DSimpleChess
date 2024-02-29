@@ -10,7 +10,7 @@ This is a simple chess game implemented in Java. It allows you to play chess on 
 - Supports standard chess rules.
 - GUI interface for easy gameplay.
 - Pieces move according to their specific rules.
-- Includes basic AI for single-player mode (optional).
+- Includes basic AI for single-player mode.
 
 ## How to Play
 
