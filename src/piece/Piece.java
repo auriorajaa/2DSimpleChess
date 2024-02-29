@@ -15,6 +15,7 @@ public class Piece {
     public int col, row, preCol, preRow;
     public int color;
     public Piece hittingP;
+    public boolean moved;
 
     public Piece(int color, int col, int row) {
         this.color = color;
@@ -70,13 +71,14 @@ public class Piece {
         y = getY(row);
         preCol = getCol(x);
         preRow = getRow(y);
+        moved = true;
     }
 
     public void resetPosition() {
         col = preCol;
         row = preRow;
         x = getX(col);
-        y = getX(row);
+        y = getY(row);
     }
 
     public boolean canMove(int targetCol, int targetRow) {
