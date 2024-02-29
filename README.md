@@ -1,18 +1,30 @@
-## Getting Started
+# Chess Game
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+This is a simple chess game implemented in Java. It allows you to play chess on a graphical user interface.
 
-## Folder Structure
+![image](https://github.com/auriorajaa/2DSimpleChess/assets/108510729/6bf89157-1252-45c9-b249-7de6d007be4c)
 
-The workspace contains two folders by default, where:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Features
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+- Supports standard chess rules.
+- GUI interface for easy gameplay.
+- Pieces move according to their specific rules.
+- Includes basic AI for single-player mode (optional).
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## How to Play
 
-## Dependency Management
+1. Clone the repository to your local machine.
+2. Open the project in your Java IDE.
+3. Compile and run the `Main.java` file.
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Controls
+
+- Click on a piece to select it.
+- Click on a valid square to move the selected piece.
+
+## Credits
+
+- Created by [Aurio Rajaa](https://github.com/auriorajaa).
+- Tutorial by [Ryisnow](https://www.youtube.com/@RyiSnow).
+- Chess pieces images by [Ryisnow](https://www.youtube.com/@RyiSnow).
