@@ -15,10 +15,12 @@ public class Board {
         for (int row = 0; row < MAX_ROW; row++) {
             for (int col = 0; col < MAX_COL; col++) {
                 if (c == 0) {
-                    g2.setColor(new Color(210, 165, 125));
+                    // Use a light green shade for the squares where pieces are placed
+                    g2.setColor(new Color(0, 128, 0)); // Light green color
                     c = 1;
                 } else {
-                    g2.setColor(new Color(175, 115, 70));
+                    // Use a darker green shade for the remaining squares
+                    g2.setColor(new Color(0, 100, 0)); // Dark green color
                     c = 0;
                 }
 
@@ -32,4 +34,5 @@ public class Board {
             }
         }
     }
+
 }
