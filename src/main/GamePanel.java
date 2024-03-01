@@ -45,6 +45,7 @@ public class GamePanel extends JPanel implements Runnable {
     boolean validSquare;
     boolean promotion;
     boolean gameover;
+    boolean stalemate;
 
     public GamePanel() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -52,9 +53,9 @@ public class GamePanel extends JPanel implements Runnable {
         addMouseMotionListener(mouse);
         addMouseListener(mouse);
 
-        // setPieces();
+        setPieces();
         // testPromotion();
-        testIllegal();
+        // testIllegal();
         copyPieces(pieces, simPieces);
     }
 
@@ -148,7 +149,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         if (promotion) {
             promoting();
-        } else if (gameover == false) {
+        } else if (gameover == false && stalemate == false) {
             //// MOUSE BUTTON PRESSED ////
             if (mouse.pressed) {
                 if (activeP == null) {
@@ -183,6 +184,8 @@ public class GamePanel extends JPanel implements Runnable {
                         if (isKingInCheck() && isCheckMate()) {
                             // Gameover if checkmate
                             gameover = true;
+                        } else if (isStalemate() && isKingInCheck() == false) {
+                            stalemate = true;
                         } else { // The game is continue
                             if (canPromote()) {
                                 promotion = true;
@@ -477,6 +480,26 @@ public class GamePanel extends JPanel implements Runnable {
         return isValidMove;
     }
 
+    private boolean isStalemate() {
+        int count = 0;
+
+        // Count the number of pieces
+        for (Piece piece : simPieces) {
+            if (piece.color != currentColor) {
+                count++;
+            }
+        }
+
+        // If only one piece is left (king)
+        if (count == 1) {
+            if (kingCanMove(getKing(true)) == false) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     private void checkCastling() {
         if (castlingP != null) {
             if (castlingP.col == 0) {
@@ -637,5 +660,15 @@ public class GamePanel extends JPanel implements Runnable {
             g2.drawString(s, 200, 420);
         }
 
+        if (stalemate) {
+            // Draw semi-transparent black rectangle
+            g2.setColor(new Color(0, 0, 0, 128)); // 128 is the alpha value for 50% opacity
+            g2.fillRect(0, 0, getWidth(), getHeight());
+
+            // Draw text message on top of the semi-transparent background
+            g2.setFont(new Font("Arial", Font.BOLD, 90));
+            g2.setColor(Color.lightGray);
+            g2.drawString("Stalemate", 200, 420);
+        }
     }
 }
