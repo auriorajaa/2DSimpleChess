@@ -102,19 +102,6 @@ public class GamePanel extends JPanel implements Runnable {
         pieces.add(new King(BLACK, 4, 0));
     }
 
-    public void testPromotion() {
-        pieces.add(new Pawn(WHITE, 0, 3));
-        pieces.add(new Pawn(BLACK, 5, 4));
-    }
-
-    public void testIllegal() {
-        pieces.add(new Pawn(WHITE, 7, 6));
-        pieces.add(new King(WHITE, 3, 7));
-        pieces.add(new King(BLACK, 0, 3));
-        pieces.add(new Bishop(BLACK, 1, 4));
-        pieces.add(new Queen(BLACK, 4, 5));
-    }
-
     public void copyPieces(ArrayList<Piece> source, ArrayList<Piece> target) {
         target.clear();
 
